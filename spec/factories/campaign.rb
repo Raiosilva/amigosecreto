@@ -1,7 +1,12 @@
 FactoryBot.define do
- factory :campaign do
-   title         { FFaker::Lorem.word }
-   description   { FFaker::Lorem.sentence }
-   user
+  factory :campaign do
+    title         { FFaker::Lorem.word }
+    description   { FFaker::Lorem.sentence }
+  #  para saber que esta factorie precisa de user:id
+    user
+    status        { :pending }
+    location        { "#{FFaker::Address.city}, #{FFaker::Address.street_address}"}
+    event_date    { FFaker::Time.date }
+    event_hour    { rand(24).to_s }
+  end
  end
-end

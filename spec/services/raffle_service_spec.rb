@@ -37,11 +37,11 @@ describe RaffleService do
         end
       end
 
-      #it "a member x don't get a member y that get the member x" do
-        # @results.each do |r|
-          #expect(r.last).not_to eq(r.first)
-        #end
-      #end
+      it "a member x don't get a member y that get the member x" do
+        @results.each do |r|
+          expect(r.last).not_to eq(r.first)
+        end
+      end
 
     end
 
@@ -53,7 +53,7 @@ describe RaffleService do
         @response = RaffleService.new(@campaign).call
       end
 
-      it "raise error" do
+      it "Return False" do
         expect(@response).to eql(false)
       end
     end
